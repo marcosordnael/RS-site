@@ -1,0 +1,518 @@
+/* Reset básico para remover margens e paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: normal;
+    background-color: #f4f4f4;
+    line-height: 1.6;
+    
+}
+h1,h2,h3{
+    text-align: center;
+}
+
+/* Estilos do header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #000;
+    z-index: 1000;
+    transition: padding 0.3s ease;
+}
+
+header.small {
+    padding: 5px 10px; /* Tamanho reduzido ao rolar */
+}
+
+.hamburger {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Container principal que vai alinhar a logo e o texto */
+.logo-container {
+    display: flex; 
+    align-items: center;
+}
+
+#nomedaempresa {
+    display: flex;
+    margin-left: 30px;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    
+    
+}
+
+#nomedaempresa h1 {
+    color: #FF0000;
+    font-size: 24px; */
+}
+
+#nomedaempresa p {
+    font-size: 10px; 
+    color: #000; 
+    background-color: #fff;
+    padding: 0px 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 255, 0.603) ;
+}
+
+
+/* Logo */
+.logo {
+    margin-left: 50px;
+    max-width: 500px;
+    height: 50px;
+    display: block;
+}
+
+.whatsapp {
+    position: fixed;
+    bottom: 20px; 
+    right: 20px; 
+    z-index: 1000; /* Garante que o botão fique acima de outros elementos */
+    background-color: #25D366; 
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+.logo-container {
+    display: flex; 
+    
+}
+
+
+#nomedaempresa h1 {
+    color: #FF0000;
+    font-size: 16px; */
+}
+
+#nomedaempresa p {
+    font-size: 6px; 
+    color: #000; 
+    background-color: #fff;
+    padding: 2px 2px 0px;
+    box-shadow: 2px 2px 2px rgba(248, 248, 250, 0.603) ;
+    border-radius: 2px;
+}
+.logo {
+    margin-left: 0px;
+    max-width: 200px;
+    height: 50px;
+    display: block;
+}
+}
+
+/* Estilos gerais para o menu */
+nav {
+    position: relative;
+    background-color: #000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #FF0000;
+    color: #ffffff;
+}
+
+/* Submenu (dropdown) */
+nav ul li ul {
+    position: absolute;
+    display: none;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    width: 300px;
+}
+
+nav ul li ul li a {
+    padding: 10px;
+    background-color: #333;
+    font-weight: normal;
+}
+
+nav ul li ul li a:hover {
+    background-color: #ff0000;
+}
+
+/* Exibir submenu ao passar o mouse */
+nav ul li:hover ul {
+    display: block;
+}
+
+/* Seta indicativa para itens com submenu */
+nav ul li a.has-submenu::after {
+    content: ' \f0d7';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.whatsapp {
+    margin-right: 15px;
+}
+
+.servicos {
+    margin-top: 93px;
+    height: 400px;
+    background-image: url(../imagens/fundoparalax.jpg); 
+    background-attachment: fixed; /*Efeito de paralaxe */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+
+
+/* Estilos gerais dos serviços */
+.servicos {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.servico-item {
+    background-color: white;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: calc(33.333% - 20px);
+    position: relative;
+    text-align: center;
+}
+
+.servico-item h3 {
+    color: #D32F2F; /* Vermelho */
+}
+
+/* Dropdown dentro do item de serviço */
+.servico-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    padding: 10px;
+    z-index: 1;
+    text-align: left;
+}
+
+.servico-item:hover .servico-dropdown {
+    display: block;
+}
+
+.servico-dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.servico-dropdown ul li {
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.servico-dropdown ul li:last-child {
+    border-bottom: none;
+}
+
+/* Menu hambúrguer */
+.hamburger {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Menu responsivo */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #424242;
+        width: 100%;
+    }
+
+    nav.show {
+        display: flex;
+    }
+
+    nav a {
+        padding: 15px;
+        text-align: center;
+        border-bottom: 1px solid #333;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        width: 100%;
+    }
+}
+
+/* Hero Section */
+.hero {
+    margin-top: 70px;
+    background-image: url(../imagens/prevencao-incendio.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 300px;
+    }
+
+    .hero h2 {
+        font-size: 1.8em;
+    }
+}
+
+/* Serviços */
+.servicos {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+#servicos > h2{
+    margin: 30px;
+    font-size: 30px;
+}
+
+.servico-item {
+    background-color: white;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: calc(33.333% - 20px);
+    position: relative;
+    text-align: center;
+}
+
+.servico-item h3 {
+    color: #D32F2F;
+}
+
+.servico-item p {
+    color: #D32F2F;
+}
+
+@media (max-width: 768px) {
+    .servico-item {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Carrossel */
+.carousel {
+    position: relative;
+    max-width: 100%;
+    margin: 50px auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+.carousel-item {
+    width: 100%;
+    flex: 0 0 100%;
+    text-align: center;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    transform: translateY(-50%);
+}
+
+.carousel-controls button {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.carousel-controls button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 768px) {
+    .carousel-item h2 {
+        font-size: 1.2em;
+    }
+
+    .carousel-item p {
+        font-size: 1em;
+    }
+
+    .carousel-controls button {
+        padding: 10px;
+    }
+}
+
+/* Formulário */
+/* Estilizando o container da seção */
+#orcamento {
+    max-width: 600px; /* Largura máxima do formulário */
+    margin: 0 auto; /* Centraliza o formulário na página */
+    padding: 20px; /* Adiciona um pouco de preenchimento interno */
+    border: 1px solid #ccc; /* Adiciona uma borda ao redor do formulário */
+    border-radius: 5px; /* Arredonda os cantos da borda */
+    background-color: #f9f9f9; /* Cor de fundo leve para o formulário */
+}
+
+/* Estilizando os rótulos e os campos do formulário */
+form label {
+    display: block; /* Faz com que o rótulo ocupe uma linha inteira */
+    margin-bottom: 5px; /* Adiciona espaço abaixo dos rótulos */
+    font-weight: bold; /* Destaca os rótulos */
+}
+
+form input, form textarea {
+    width: 100%; /* Faz com que os campos ocupem toda a largura disponível */
+    padding: 8px; /* Adiciona preenchimento interno aos campos */
+    margin-bottom: 10px; /* Adiciona espaço abaixo dos campos */
+    border: 1px solid #ccc; /* Adiciona uma borda aos campos */
+    border-radius: 4px; /* Arredonda os cantos dos campos */
+    box-sizing: border-box; /* Garante que o padding e a borda sejam incluídos na largura total dos campos */
+}
+
+/* Estilizando o botão de envio */
+form button {
+    background-color: #007bff; /* Cor de fundo azul */
+    color: white; /* Cor do texto no botão */
+    padding: 10px 15px; /* Adiciona preenchimento interno ao botão */
+    border: none; /* Remove a borda padrão do botão */
+    border-radius: 4px; /* Arredonda os cantos do botão */
+    cursor: pointer; /* Muda o cursor quando passa sobre o botão */
+    font-size: 16px; /* Define o tamanho da fonte no botão */
+}
+
+form button:hover {
+    background-color: #0056b3; /* Altera a cor do botão quando o mouse passa sobre ele */
+}
+
+
+@media (max-width: 768px) {
+    form input,
+    form textarea,
+    form button {
+        width: 100%;
+        font-size: 16px;
+    }
+}
+
+#contato {
+    text-align: center;
+}
+
+/* Rodapé */
+footer {
+    background-color: #424242;
+    color: white;
+    text-align: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* Ajustes adicionais para tablets e smartphones */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .servico-item {
+        width: calc(50% - 20px);
+    }
+}
