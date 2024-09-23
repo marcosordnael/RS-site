@@ -11,12 +11,10 @@ body {
     font-family: 'Poppins', sans-serif;
     letter-spacing: normal;
     background-color: #f4f4f4;
-    line-height: 1.6;
+    line-height: 1.1;
     
 }
-h1,h2,h3{
-    text-align: center;
-}
+
 
 /* Estilos do header */
 header {
@@ -197,77 +195,10 @@ nav ul li a.has-submenu::after {
     margin-right: 15px;
 }
 
-.servicos {
-    margin-top: 93px;
-    height: 400px;
-    background-image: url(../imagens/fundoparalax.jpg); 
-    background-attachment: fixed; /*Efeito de paralaxe */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
-}
 
 
 
-/* Estilos gerais dos serviços */
-.servicos {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-}
 
-.servico-item {
-    background-color: white;
-    padding: 20px;
-    margin: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    width: calc(33.333% - 20px);
-    position: relative;
-    text-align: center;
-}
-
-.servico-item h3 {
-    color: #D32F2F; /* Vermelho */
-}
-
-/* Dropdown dentro do item de serviço */
-.servico-dropdown {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    padding: 10px;
-    z-index: 1;
-    text-align: left;
-}
-
-.servico-item:hover .servico-dropdown {
-    display: block;
-}
-
-.servico-dropdown ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.servico-dropdown ul li {
-    padding: 5px 0;
-    border-bottom: 1px solid #eee;
-}
-
-.servico-dropdown ul li:last-child {
-    border-bottom: none;
-}
 
 /* Menu hambúrguer */
 .hamburger {
@@ -319,18 +250,51 @@ nav ul li a.has-submenu::after {
     background-image: url(../imagens/prevencao-incendio.jpg);
     background-size: cover;
     background-position: center;
-    height: 400px;
+    height: 100vh;
     color: white;
-    text-align: center;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    align-items: center; /* Centraliza verticalmente */
+    
+    
 }
 
-.hero h2 {
-    font-size: 2.5em;
+.hero .title h2 {
+    font-size: 2.8rem;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    margin-left: 80px;
+    font-weight: bold;
 }
+
+.hero .title p {
+    font-size: 1em;
+    margin-top: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    margin-left: 80px;
+    width: 600px;
+    margin-bottom: 50px;
+}
+
+.button-formulario a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #FF0000; 
+    padding: 10px 20px; 
+    margin-left: 80px; 
+    border-radius: 5px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    font-weight: bold;
+    font-size: 16px; 
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+
+.button-formulario a:hover {
+    background-color: #fbfbfc; 
+    color: #ff0505;
+    transform:scaleY(-2px); /* Efeito de leve elevação */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+}
+
+
 
 @media (max-width: 768px) {
     .hero {
@@ -341,44 +305,237 @@ nav ul li a.has-submenu::after {
         font-size: 1.8em;
     }
 }
+/* Estilo Geral da Seção */
+.secao-servicos {
+    margin-top: 50px;
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.titulo-secao {
+    margin-top: 50px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+}
+
+.divisor-secao {
+    width: 70px;
+    height: 3px;
+    background-color: #ff0000;
+    margin: 20px auto 70px;
+    border: none;
+}
+
+.container-servicos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.servico {
+    width: 30%;
+    margin: 20px 0;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.servico:hover {
+    transform: translateY(-5px);
+}
+
+.icone {
+    font-size: 60px;
+    color: #ff0000;
+    position: relative;
+    top: -50px;
+}
+
+.titulo-servico {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Estilo do Botão "Saiba Mais" */
+.botao-saiba-mais {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.botao-saiba-mais:hover {
+    background-color: #555;
+}
+
+
+
+
+
+  
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .servico {
+        width: 100%;
+    }
+}
+
 
 /* Serviços */
+
+/* Estilos gerais dos serviços */
+/* Container de Serviços */
 .servicos {
+    margin-top: 93px;
+    height: 100vh;
+    background-image: url(../imagens/background.png); 
+    background-attachment: fixed; /* Efeito de paralaxe */
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    flex-wrap: wrap; /* Permite o ajuste no mobile */
 }
 
-#servicos > h2{
-    margin: 30px;
-    font-size: 30px;
-}
-
+/* Item de Serviço */
 .servico-item {
     background-color: white;
     padding: 20px;
-    margin: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: calc(33.333% - 20px);
+    margin: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px; /* Arredondamento das bordas */
+    width: calc(33.333% - 30px);
     position: relative;
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Efeito ao passar o mouse no item */
+.servico-item:hover {
+    transform: translateY(-5px); /* Leve elevação */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra mais intensa */
+}
+
+/* Título do Serviço */
 .servico-item h3 {
-    color: #D32F2F;
+    color: #D32F2F; /* Vermelho */
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 15px;
 }
 
+/* Parágrafo de descrição */
 .servico-item p {
-    color: #D32F2F;
+    color: #2d22be;
+    text-align: left;
+    margin: 20px 0;
+    font-weight: 600;
 }
 
+/* Dropdown de Serviço */
+.servico-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 1;
+    text-align: left;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    visibility: hidden;
+}
+
+/* Efeito ao passar o mouse no item de serviço */
+.servico-item:hover .servico-dropdown {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Lista de serviços dentro do dropdown */
+.servico-dropdown ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 10px 0;
+}
+
+.servico-dropdown ul li {
+    color: #333;
+    font-style: italic;
+    padding: 10px;
+    border-radius: 5px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+
+/* Efeito hover nos itens da lista */
+.servico-dropdown ul li:hover {
+    background-color: #e00e0e;
+    color: #fff;
+}
+
+/* Links dentro do dropdown */
+.servico-dropdown a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.servico-dropdown a:hover {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/* Responsividade */
 @media (max-width: 768px) {
     .servico-item {
         width: 100%;
         margin-bottom: 20px;
     }
+
+    .servico-dropdown {
+        width: auto;
+        left: 0;
+        right: 0;
+        padding: 15px;
+    }
 }
+
+/* Ajustes para tela pequena */
+@media (max-width: 480px) {
+    .servico-item {
+        padding: 15px;
+    }
+
+    .servico-item h3 {
+        font-size: 1.2em;
+    }
+
+    .servico-item p {
+        font-size: 0.9em;
+    }
+}
+
+
 
 /* Carrossel */
 .carousel {
