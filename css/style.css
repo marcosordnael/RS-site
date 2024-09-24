@@ -8,7 +8,7 @@
 
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
     letter-spacing: normal;
     background-color: #f4f4f4;
     line-height: 1.1;
@@ -94,15 +94,18 @@ header.small {
 }
 
 @media (max-width: 768px) {
-.logo-container {
-    display: flex; 
-    
-}
+    #nomedaempresa h1 {
+        font-size: 16px;
+    }
 
+    #nomedaempresa p {
+        font-size: 8px;
+    }
 
-#nomedaempresa h1 {
-    color: #FF0000;
-    font-size: 16px; */
+    .logo {
+        margin-left: 10px;
+        max-width: 300px;
+    }
 }
 
 #nomedaempresa p {
@@ -119,12 +122,12 @@ header.small {
     height: 50px;
     
 }
-}
 
 /* Estilos gerais para o menu */
 nav {
     position: relative;
     background-color: #000;
+    z-index: 1000; /* Garantir que o menu apareça acima de outros elementos */
 }
 
 nav ul {
@@ -162,7 +165,7 @@ nav ul li ul {
     background-color: #333;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 999;
-    width: 300px;
+    width: 200px; /* Ajustado para caber melhor */
 }
 
 nav ul li ul li a {
@@ -175,14 +178,14 @@ nav ul li ul li a:hover {
     background-color: #ff0000;
 }
 
-/* Exibir submenu ao passar o mouse */
+/* Exibir submenu ao passar o mouse em telas maiores */
 nav ul li:hover ul {
     display: block;
 }
 
 /* Seta indicativa para itens com submenu */
 nav ul li a.has-submenu::after {
-    content: ' \f0d7';
+    content: ' \f0d7'; /* Código da seta */
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     position: absolute;
@@ -191,14 +194,10 @@ nav ul li a.has-submenu::after {
     transform: translateY(-50%);
 }
 
+/* Estilo do botão WhatsApp */
 .whatsapp {
     margin-right: 15px;
 }
-
-
-
-
-
 
 /* Menu hambúrguer */
 .hamburger {
@@ -212,16 +211,20 @@ nav ul li a.has-submenu::after {
 @media (max-width: 768px) {
     .hamburger {
         display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
     }
 
     nav {
-        display: none;
+        display: none; /* O menu começa oculto */
         flex-direction: column;
         position: absolute;
         top: 60px;
         right: 0;
         background-color: #424242;
-        width: 100%;
+        width: 100%; /* O menu ocupará a largura total */
+        z-index: 9999;
     }
 
     nav.show {
@@ -242,16 +245,37 @@ nav ul li a.has-submenu::after {
     nav ul li {
         width: 100%;
     }
+
+    /* Estilos para o submenu no mobile */
+    nav ul li ul {
+        position: static;
+        display: none;
+        box-shadow: none;
+        width: 100%;
+        background-color: #333;
+    }
+
+    nav ul li.show-submenu ul {
+        display: block; /* Exibir o submenu ao clicar no item principal no mobile */
+    }
+
+    /* Ocultar a seta indicativa no mobile */
+    nav ul li a.has-submenu::after {
+        display: none;
+    }
 }
+
 
 /* Hero Section */
 .hero {
+    
     margin-top: 70px;
     background-image: url(../imagens/prevencao-incendio.jpg);
     background-size: cover;
     background-position: center;
     height: 100vh;
     color: white;
+    font-weight: bold;
     display: flex;
     align-items: center; /* Centraliza verticalmente */
     
@@ -297,14 +321,43 @@ nav ul li a.has-submenu::after {
 
 
 @media (max-width: 768px) {
+    
     .hero {
-        height: 300px;
+        height: 400px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
 
-    .hero h2 {
-        font-size: 1.8em;
+    
+
+    .hero .title h2 {
+        margin: 0 0 10px 0; /* Espaço abaixo do título */
+        font-size: 30px;
+        text-align: center;
+        line-height: 0.9; /* Ajusta o espaçamento entre as linhas para uma melhor leitura */
+    }
+
+    .hero .title p {
+        font-size: 0.7rem; /* Mantém o tamanho da fonte */
+        margin: 20px 10px 30px 10px; /* Espaço de 10px à esquerda e direita e 20px abaixo */
+        padding: 0; /* Remove o padding adicional no parágrafo */
+        text-align: left; /* Alinha o texto à esquerda */
+        width: auto; /* Deixa a largura se ajustar conforme necessário */
+    }
+    
+
+    .button-formulario a {
+        font-size: 14px; 
+        margin: 0 auto;
+        padding: 10px 20px; 
+        border-radius: 5px; 
     }
 }
+
 /* Estilo Geral da Seção */
 .secao-servicos {
     margin-top: 50px;
@@ -318,6 +371,13 @@ nav ul li a.has-submenu::after {
     font-size: 32px;
     font-weight: bold;
     color: #333;
+}
+@media (max-width: 768px) {
+    .titulo-secao {
+        margin-top: 5px;
+        padding: 5px;
+        font-size: 20px;
+    }
 }
 
 .divisor-secao {
@@ -581,18 +641,36 @@ nav ul li a.has-submenu::after {
 }
 
 @media (max-width: 768px) {
-    .carousel-item h2 {
-        font-size: 1.2em;
-    }
-
-    .carousel-item p {
-        font-size: 1em;
-    }
-
     .carousel-controls button {
-        padding: 10px;
+        display: none; /* Esconde os botões do carrossel em telas menores */
+    }
+
+    .carousel-indicators {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .carousel-indicators li {
+        background-color: #ccc; /* Cor das bolinhas */
+        border-radius: 50%;
+        width: 10px;
+        height: 10px;
+        margin: 0 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .carousel-indicators .active {
+        background-color: #333; /* Cor da bolinha ativa */
     }
 }
+
 
 /* Formulário */
 /* Estilizando o container da seção */
