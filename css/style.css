@@ -627,49 +627,63 @@ nav ul li a.has-submenu::after {
     transform: translateY(-50%);
 }
 
+/* Estilo para os controles do carrossel (botões) */
 .carousel-controls button {
     background-color: rgba(0, 0, 0, 0.5);
     border: none;
     color: white;
-    font-size: 20px;
-    padding: 20px;
+    font-size: 24px;
     cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
 }
 
-.carousel-controls button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+.carousel-controls #prevBtn {
+    left: 10px;
 }
 
+.carousel-controls #nextBtn {
+    right: 10px;
+}
+
+/* Mostrar os botões apenas em telas maiores */
+@media (min-width: 769px) {
+    .carousel-controls {
+        display: block;
+    }
+}
+
+/* Ocultar os botões e exibir apenas as bolinhas em telas menores */
 @media (max-width: 768px) {
-    .carousel-controls button {
-        display: none; /* Esconde os botões do carrossel em telas menores */
+    .carousel-controls {
+        display: none; /* Esconde os botões */
     }
 
+    /* Ajuste das bolinhas/indicadores em telas menores */
     .carousel-indicators {
         display: flex;
         justify-content: center;
-        margin-top: 10px;
-        position: absolute;
-        bottom: 10px;
-        width: 100%;
-        list-style: none;
-        padding-left: 0;
+        margin-top: 20px;
     }
 
     .carousel-indicators li {
-        background-color: #ccc; /* Cor das bolinhas */
-        border-radius: 50%;
+        display: inline-block;
         width: 10px;
         height: 10px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
         margin: 0 5px;
         cursor: pointer;
-        transition: background-color 0.3s ease;
     }
 
-    .carousel-indicators .active {
-        background-color: #333; /* Cor da bolinha ativa */
+    .carousel-indicators li.active {
+        background-color: #fff;
     }
 }
+
 
 
 /* Formulário */
